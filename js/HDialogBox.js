@@ -48,6 +48,9 @@
             vObj.DialogTitle.on("mouseup",function(e){
                 vObj.DialogMouseUp(e);
             });
+            $(window).on("resize",function(e){
+                vObj.DialogMouseUp(e);
+            })
         },
         
 //      关闭对话框
