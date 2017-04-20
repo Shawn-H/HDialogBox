@@ -6,9 +6,9 @@
         this.isCreated=false;
         this.defualt={
 //            宽度
-            "width":"38%",
+            "width":300,
 //            高度
-            "height":"20%",
+            "height":130,
 //            标题
             "title":"标题",
 //            内容
@@ -48,8 +48,9 @@
             vObj.DialogTitle.on("mouseup",function(e){
                 vObj.DialogMouseUp(e);
             });
-            $(window).on("resize",function(e){
-                vObj.DialogMouseUp(e);
+            $(window).on("resize",function(){
+                vObj.DialogBox.css({"top":($("#DialogMask").innerHeight()-vObj.DialogBox.innerHeight())/2,"left":($("#DialogMask").innerWidth()-vObj.DialogBox.innerWidth())/2});
+                vObj.DialogMouseUp();
             })
         },
         
@@ -104,7 +105,7 @@
              vObj.DialogBox.css("top",offsetT+"px");
         },
 //      结束拖拽
-        DialogMouseUp:function(e){
+        DialogMouseUp:function(){
             document.onmousemove=null;
         },
         
